@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Pathway Decision Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Math Pathway Decision Tool</h1>
+            <button id="resetButton" onclick="resetForm()" disabled>Reset</button>
+        </div>
+        
+        <div class="section">
+            <h2>Interests (Select up to 2)</h2>
+            <div class="checkbox-group" id="interestGroup">
+                <label><input type="checkbox" class="interest" value="problem_solving" onchange="limitSelection('interest', 2)"> Solving Puzzles</label>
+                <label><input type="checkbox" class="interest" value="patterns" onchange="limitSelection('interest', 2)"> Finding Patterns</label>
+                <label><input type="checkbox" class="interest" value="abstract_thinking" onchange="limitSelection('interest', 2)"> Big Ideas</label>
+                <label><input type="checkbox" class="interest" value="practical_applications" onchange="limitSelection('interest', 2)"> Everyday Math</label>
+                <label><input type="checkbox" class="interest" value="technology" onchange="limitSelection('interest', 2)"> Technology</label>
+                <label><input type="checkbox" class="interest" value="analytical_thinking" onchange="limitSelection('interest', 2)"> Analyzing Things</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Job Aspirations (Select up to 3)</h2>
+            <div class="checkbox-group" id="jobGroup">
+                <label><input type="checkbox" class="job" value="engineer" onchange="limitSelection('job', 3)"> Engineer</label>
+                <label><input type="checkbox" class="job" value="data_scientist" onchange="limitSelection('job', 3)"> Data Scientist</label>
+                <label><input type="checkbox" class="job" value="economist" onchange="limitSelection('job', 3)"> Economist</label>
+                <label><input type="checkbox" class="job" value="financial_analyst" onchange="limitSelection('job', 3)"> Financial Analyst</label>
+                <label><input type="checkbox" class="job" value="actuary" onchange="limitSelection('job', 3)"> Actuary</label>
+                <label><input type="checkbox" class="job" value="physicist" onchange="limitSelection('job', 3)"> Physicist</label>
+                <label><input type="checkbox" class="job" value="chemist" onchange="limitSelection('job', 3)"> Chemist</label>
+                <label><input type="checkbox" class="job" value="biologist" onchange="limitSelection('job', 3)"> Biologist</label>
+                <label><input type="checkbox" class="job" value="doctor" onchange="limitSelection('job', 3)"> Doctor/Surgeon</label>
+                <label><input type="checkbox" class="job" value="statistician" onchange="limitSelection('job', 3)"> Statistician</label>
+                <label><input type="checkbox" class="job" value="programmer" onchange="limitSelection('job', 3)"> Computer Scientist/Programmer</label>
+                <label><input type="checkbox" class="job" value="teacher" onchange="limitSelection('job', 3)"> Teacher</label>
+                <label><input type="checkbox" class="job" value="architect" onchange="limitSelection('job', 3)"> Architect</label>
+                <label><input type="checkbox" class="job" value="electrician" onchange="limitSelection('job', 3)"> Electrician</label>
+                <label><input type="checkbox" class="job" value="plumber" onchange="limitSelection('job', 3)"> Plumber</label>
+                <label><input type="checkbox" class="job" value="carpenter" onchange="limitSelection('job', 3)"> Carpenter</label>
+                <label><input type="checkbox" class="job" value="construction_manager" onchange="limitSelection('job', 3)"> Construction Manager</label>
+                <label><input type="checkbox" class="job" value="machinist" onchange="limitSelection('job', 3)"> Machinist</label>
+                <label><input type="checkbox" class="job" value="pilot" onchange="limitSelection('job', 3)"> Pilot</label>
+                <label><input type="checkbox" class="job" value="auto_technician" onchange="limitSelection('job', 3)"> Automotive Technician</label>
+                <label><input type="checkbox" class="job" value="supply_chain_manager" onchange="limitSelection('job', 3)"> Supply Chain Manager</label>
+                <label><input type="checkbox" class="job" value="accountant" onchange="limitSelection('job', 3)"> Accountant</label>
+                <label><input type="checkbox" class="job" value="insurance_underwriter" onchange="limitSelection('job', 3)"> Insurance Underwriter</label>
+                <label><input type="checkbox" class="job" value="real_estate_appraiser" onchange="limitSelection('job', 3)"> Real Estate Appraiser</label>
+                <label><input type="checkbox" class="job" value="logistician" onchange="limitSelection('job', 3)"> Logistician</label>
+                <label><input type="checkbox" class="job" value="retail_manager" onchange="limitSelection('job', 3)"> Retail Manager</label>
+                <label><input type="checkbox" class="job" value="beauty" onchange="limitSelection('job', 3)"> Beauty</label>
+                <label><input type="checkbox" class="job" value="nurse" onchange="limitSelection('job', 3)"> Nurse</label>
+                <label><input type="checkbox" class="job" value="hairdresser" onchange="limitSelection('job', 3)"> Hairdresser</label>
+                <label><input type="checkbox" class="job" value="physio" onchange="limitSelection('job', 3)"> Physio</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Strength in Mathematics</h2>
+            <input type="range" id="mathStrength" name="mathStrength" min="0" max="100">
+            <span id="mathStrengthValue">50</span>
+        </div>
+
+        <button onclick="determinePathway()">Determine Pathway</button>
+
+        <div class="result">
+            <h2>Recommended Pathway</h2>
+            <p id="recommendedPathway">Your pathway will be shown here.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
